@@ -1,2 +1,1 @@
-# GeekProject
-Dans ce tutoriel, je partage les bases nécessaire pour maitriser le framework Python Flask qui permet de créer des sites web dynamiques et autres. Le but est de créer un simple blog multi utilisateurs pour leur permettre de poster des articles.
+Vous pouvez télécharger le code en cliquant sur l'onglet code en format zip ou bien vous le visionner à partir de la branche main. Pour chaque mise à jour apporter je vous conseil de retélécharger la dernière version afin que vous puissiez être à jour.
