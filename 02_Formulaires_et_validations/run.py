@@ -65,6 +65,16 @@ def register():
     return render_template("register.html", title="S'inscrire", form=form)
 
 
+# login route
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = RegistrationForm() # on crée une instance pour RegistrationForm
+    if form.validate_on_submit():
+        flash('Votre compte a été créer avec succès', 'success')
+        return redirect(url_for('home'))
+    return render_template("login.html", title="S'inscrire", form=form)
+
+
 # lancer notre application
 if __name__ == "__main__":
     app.run(debug=True)

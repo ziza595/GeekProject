@@ -1,32 +1,28 @@
 {% extends 'default.html' %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9">
-                {% for post in posts %}
-                    <div class="media">
-                        <img src="..." class="align-self-start mr-3" alt="...">
-                        <div class="media-body">
-                            <h5 class="mt-0">{{ post.author }}</h5>
-                            <small>{{ post.date_posted }}</small>
-                            <p>{{ post.title }}</p>
-                            <p class="text-justify">{{ post.content }}</p>
-                        </div>
-                    </div><hr>
-                {% endfor %}
-            </div>
-            <div class="col-md-3">
-                <div class="card" style="width: 18rem;">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Posts <span class="badge badge-danger">3</span></li>
-                        <li class="list-group-item">Derniers posts</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>
-                    <div class="card-footer">
-                        Card footer
-                    </div>
+    <div class="col-md-9">
+        {% for post in posts %}
+            <div class="media">
+                <img src="..." class="align-self-start mr-3" alt="...">
+                <div class="media-body">
+                    <h5 class="mt-0">{{ post.author }}</h5>
+                    <small>{{ post.date_posted }}</small>
+                    <p>{{ post.title }}</p>
+                    <p class="text-justify">{{ post.content }}</p>
                 </div>
+            </div><hr>
+        {% endfor %}
+    </div>
+    <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Posts <span class="badge badge-danger">3</span></li>
+                <li class="list-group-item">Derniers posts</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+            <div class="card-footer">
+                Card footer
             </div>
         </div>
     </div>
