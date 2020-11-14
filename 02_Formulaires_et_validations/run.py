@@ -67,8 +67,4 @@ def register():
 
 # lancer notre application
 if __name__ == "__main__":
-<<<<<<< HEAD
     app.run(debug=True)
-=======
-    app.run(debug=True)
->>>>>>> 91cb3958faa61b36b9a68f9e007226b7b53be0e1
