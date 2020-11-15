@@ -14,21 +14,21 @@
 
     <body>
         
-        <div class="content mb-3">
+        <div class="mb-3">
             {% include '_nav.html' %}
         </div>
 
         <div class="container">
             <div class="row">
                 <!-- Flash for forms validations -->
-                <div class="col-md-12">
-                    {% with messages = get_flashed_messages() %}
+                <div class="col-md-9">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
                         {% if messages %}
-                            {% for message in messages %}
-                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <strong>Holy guacamole!</strong> {{ message }}.
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                    <strong>Info !</strong> {{ message }}.
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
+                                        <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                             {% endfor %}

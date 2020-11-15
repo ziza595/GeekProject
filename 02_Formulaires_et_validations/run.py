@@ -2,7 +2,7 @@
 import secrets # pour créer une clé de sécurité
 # modules externes
 from flask import Flask, render_template, url_for, flash, redirect
-from forms import RegistrationForm
+from forms import RegistrationForm, LoginForm
 
 
 # créer une première instance qui représente notre application
@@ -62,13 +62,21 @@ def register():
     if form.validate_on_submit():
         flash('Votre compte a été créer avec succès', 'success')
         return redirect(url_for('home'))
-    return render_template("register.html", title="S'inscrire", form=form)
+    return render_template("register.html", title="Inscription", form=form)
 
 
 # login route
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template("login.html")
+    form = LoginForm()
+    if form.validate_on_submit():
+        if form.email.data == 'email@gmail.com' and form.password.data == 'password':
+            flash('Connexion réussie', 'success')
+            return redirect(url_for('home'))
+        else:
+            flash('Identifiants incorrect.', 'danger')
+            return redirect(url_for('login'))
+    return render_template("login.html", title="Connexion", form=form)
 
 
 # lancer notre application
